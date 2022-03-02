@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --clr-c1:rgba(160, 233, 42, 0.883);
+    --clr-bg:rgba(177, 248, 55, 0.911);
+}
+.header{
+    height: 100vh;
+    width: 100%;
+    padding: 0 8%;
+    position: relative;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 18%;
+    padding: 1em;
+}
+.nav-links{
+    padding: 1.5em 0;
+}
+.nav-links li{
+    display: inline-block;
+    text-transform: capitalize;
+    margin: 0 1em;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0.125em 0;
+    position: relative;
+}
+.nav-links li a::after{
+    content: '';
+    background: var(--clr-bg);
+    width: 0;
+    height: .2em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.nav-links li a:hover::after{
+    width: 100%;
+}
+.btn{
+    background: var(--clr-bg);
+    color: white;
+    padding: 0.5em 1.5em;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+.content{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 90%;
+    max-width: 57em;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    padding-top: 2em;
+}
+.content h1{
+    font-size: 3.8em;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+.content form{
+    background: #fff;
+    padding: 0.5em;
+    border-radius: .7em;
+    display: flex;
+}
+.content form input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 1.25em;
+    font-size: 1em;
+}
+.content form button{
+    background: var(--clr-bg);
+    color: #fff;
+    padding: 0.5em 1.5em;
+    border: none;
+    border-radius: 0.1em;
+    cursor: pointer;
+}
+.category-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    text-transform: capitalize;
+    z-index: -1;
+}
+.category{
+    width: 5rem;
+    height: 5rem;
+    opacity: 0.15;
+    background: var(--clr-bg);
+    margin:0 1em;
+    font-size: 1em;
+    color: #fff;
+    z-index: 1;
+}
+.category img{
+    width: 2em;
+    margin-bottom: 0.2em;
+    margin-top: .5em;
+}
+.category p{
+    color: #fff;
+}
+.video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+}
+@media(min-aspect-ratio:16/9){
+    .video{
+        width: 100%;
+        height: auto;
+    }
+}
+@media(max-aspect-ratio:16/9){
+    .video{
+        width: 0;
+        height: 100%;
+    }
+}
